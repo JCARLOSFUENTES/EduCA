@@ -13,6 +13,11 @@ export default {
             'secondary': '#7b2cbf',
             'terciary': '#9d4edd'
           }),
+        colors: {
+            'primary': '#5a189a',
+            'secondary': '#7b2cbf',
+            'terciary': '#9d4edd'
+        },
         borderColor: {
             'primary': '#5a189a',
             'secondary': '#7b2cbf',
