@@ -1,4 +1,4 @@
-<nav class="w-full h-16 hidden bg-white lg:flex p-4 justify-between items-center border-b shadow-sm">
+<nav class="w-full h-16 hidden bg-white lg:flex p-4 justify-between items-center border-b shadow-md ">
 
     <div class="h-auto w-auto">
         <x-logo></x-logo>
