@@ -11,9 +11,10 @@
         @guest
             <x-guest-nav-bar></x-guest-nav-bar>
         @endguest
-        <main>
-            @yield('content')
-        </main>
+        {{-- container mx-auto mt-5 --}}
+
+        @yield('content')
+
         <x-footer></x-footer>
     </body>
 </html>
