@@ -5,8 +5,8 @@
     </div>
 
     <div class="flex items-center justify-around w-50 space-x-4">
-        <a class="Primary-Button" href="">Iniciar Sesión</a>
-        <a class="Primary-Button" href="">Registrarse</a>
+        <a class="Primary-Button" href="{{route('login.index')}}">Iniciar Sesión</a>
+        <a class="Primary-Button" href="{{route('register.index')}}">Registrarse</a>
     </div>
 
 </nav>

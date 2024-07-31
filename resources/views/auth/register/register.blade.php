@@ -63,7 +63,7 @@
                         </input>
                     </div>
 
-                    <p class="text-gray-800 text-sm mt-6 text-center">Ya tienes una cuenta <a href="#" class="text-secondary font-semibold hover:underline ml-1">Inicia Sesión aquí</a></p>
+                    <p class="text-gray-800 text-sm mt-6 text-center">Ya tienes una cuenta <a href="{{route('login.index')}}" class="text-secondary font-semibold hover:underline ml-1">Inicia Sesión aquí</a></p>
 
                 </div>
 

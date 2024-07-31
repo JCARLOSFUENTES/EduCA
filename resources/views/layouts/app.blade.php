@@ -11,7 +11,10 @@
         @guest
             <x-guest-nav-bar></x-guest-nav-bar>
         @endguest
-        {{-- container mx-auto mt-5 --}}
+
+        @auth
+            <x-auth-nav-bar></x-auth-nav-bar>
+        @endauth
 
         @yield('content')
 
