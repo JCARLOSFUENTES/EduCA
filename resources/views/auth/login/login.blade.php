@@ -37,6 +37,10 @@
                     @enderror
                 </div>
 
+                <div>
+                    <input type="checkbox" name="remember"> <label for="remember">Mantener mi sesión abierta</label>
+                </div>
+
                 <div class="!mt-12">
                     <input type="submit" value="Iniciar Sesión" class="form-button">
                     </input>

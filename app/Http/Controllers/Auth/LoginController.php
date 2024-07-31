@@ -15,6 +15,7 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
+
         // Validaciones del formulario de login
         $this->validate($request, [
             'email' => 'required|email|max:60',
@@ -22,7 +23,7 @@ class LoginController extends Controller
         ]);
 
         // Verificación si las credenciales son correctas
-        if(!auth()->attempt($request->only('email', 'password'))) {
+        if(!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
 
