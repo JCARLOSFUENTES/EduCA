@@ -9,6 +9,7 @@ export default {
     extend: {
         backgroundColor: theme => ({
             ...theme('colors'),
+            'background': '#f4f4f0',
             'primary': '#5a189a',
             'secondary': '#7b2cbf',
             'terciary': '#9d4edd'
