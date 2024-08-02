@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta de la Landing Page
@@ -41,5 +42,12 @@ Route::controller(LogoutController::class)->group(function(){
 Route::controller(HomeController::class)->group(function(){
 
     Route::get('/home', 'index')->name('home.index');
+
+});
+
+// Rutas del Perfil
+Route::controller(ProfileController::class)->group(function(){
+
+    Route::get('/{user:username}', 'index')->name('profile.index');
 
 });
