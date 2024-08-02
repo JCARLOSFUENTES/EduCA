@@ -9,6 +9,12 @@
     </head>
     <body class="bg-background">
 
+        @guest
+            <x-guest-nav-bar></x-guest-nav-bar>
+        @endguest
+
+        <x-auth-nav-bar></x-auth-nav-bar>
+
         @yield('content')
 
     </body>
