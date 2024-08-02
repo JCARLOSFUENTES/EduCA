@@ -2,17 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-.Primary-Button
-{
-    @apply flex justify-center items-center py-2 px-4 rounded-lg bg-primary text-white border border-primary hover:bg-white hover:text-primary font-normal transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-x-110
-}
-
 .form-inputs
 {
-    @apply text-gray-800 bg-white border border-gray-300 w-full text-sm px-4 py-3 rounded-md outline-secondary
+    @apply w-96 border-black border-2 p-2.5 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md transition-all duration-200 ease-in-out;
 }
 
-.form-button
+.bg-login
 {
-    @apply w-full py-3 px-4 text-sm tracking-wider font-semibold rounded-md text-white bg-secondary hover:bg-terciary hover:ease-out duration-500 focus:outline-none
+    @apply bg-cover bg-center;
+    background-image: url('/public/img/login.jpg');
+}
+.bg-register
+{
+    @apply bg-cover bg-center;
+    background-image: url('/public/img/register.jpg');
+}
+
+.button-primary
+{
+    @apply h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-full h-12 border-black border-2 p-2.5 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF] rounded-md transition-all duration-200 ease-in-out;
+}
+
+.button-navbar
+{
+    @apply h-12 border-transparent border-2 p-2.5 hover:bg-[#ffffff] hover:border-black hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#ffffff] rounded-full;
+}
+
+.message-error
+{
+    @apply h-8 flex items-center border-black border-2 p-2.5 bg-red-400 rounded-md;
+}
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border: 2px solid black;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border: 3px solid #fff;
+    border-radius: 5px;
+}
+
+/* Fallback for other browsers */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: black #f0f0f0;
 }
