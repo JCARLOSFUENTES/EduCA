@@ -1,26 +1,28 @@
 @auth
-<nav class="bg-gray-800 p-4">
-    <div class="container mx-auto flex justify-between items-center">
-        <!-- Sección de inicio -->
-        <div class="text-white">
-            <a href="{{ route('home.index') }}" class="text-lg font-semibold">Inicio</a>
+
+    <nav class="hidden w-full md:flex items-center justify-between p-4 border-b-2 border-black fixed bg-background">
+        <a href="{{ route('welcome') }}" class="text-4xl font-bold text-gray-800">EduCA</a>
+
+        <div>
+            <ul class="flex space-x-6">
+                <li>
+                    <a href="{{route('home.index')}}" class="button-navbar">Inicio</a>
+                </li>
+                <li>
+                    <a href="#" class="button-navbar">Rutas</a>
+                </li>
+            </ul>
         </div>
 
-        <!-- Sección de perfil y cerrar sesión -->
-        <div class="flex items-center space-x-4">
-            <!-- Nombre del usuario -->
-                <div class="text-white">
-                    {{ $user->username }}
-                </div>
+        <div class="flex items-center space-x-6">
+            <a href="{{route('profile.index', auth()->user()->username)}}" class="text-lg text-gray-800 underline">{{ auth()->user()->username }}</a>
 
-                <!-- Cerrar sesión -->
-                <form method="POST" action="{{route('logout.store')}}">
-                    @csrf
-                    @method('POST')
-                    <button type="submit" class="text-white hover:bg-gray-700 p-2 rounded">Cerrar sesión</button>
-                </form>
+            <form action="{{ route('logout.store') }}" method="POST" class="inline">
+                @csrf
+                @method('POST')
+                <input type="submit" value="Cerrar Sesión" class="button-primary">
+            </form>
         </div>
-    </div>
-</nav>
+    </nav>
 
 @endauth
