@@ -3,54 +3,57 @@
 @section('title', 'EduCA - Iniciar Sesión')
 
 @section('content')
-<div class="flex flex-col justify-center sm:h-screen p-4">
-    <div class="max-w-md w-full mx-auto rounded-2xl p-8 shadow-lg border border-slate-300">
-        <div class="text-center mb-12">
-            <a href="{{route('welcome')}}">
-                <x-logo></x-logo>
-            </a>
-        </div>
+    <section class="h-screen flex">
 
-        <form method="POST" action="{{route('login.store')}}" novalidate>
-            @csrf
-            @method('POST')
-            <div class="space-y-3">
+        <div class="grid grid-cols-5 h-full w-full flex-1">
 
-                @if (session('mensaje'))
-                    <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{session('mensaje')}}</p>
-                @endif
-
-
-                <div>
-                    <label for="email" class="text-gray-800 text-sm mb-2 block font-semibold">Correo Electronico</label>
-                    <input id="email" name="email" type="email" class="form-inputs @error('email') border-red-500 @enderror" placeholder="juca@example.com" value="{{old('email')}}"/>
-                    @error('email')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <div>
-                    <label for="password" class="text-gray-800 text-sm mb-2 block font-semibold">Contraseña</label>
-                    <input id="password" name="password" type="password" class="form-inputs @error('password') border-red-500 @enderror" placeholder="*******" />
-                    @error('password')
-                        <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">{{$message}}</p>
-                    @enderror
-                </div>
-
-                <div>
-                    <input type="checkbox" name="remember"> <label for="remember">Mantener mi sesión abierta</label>
-                </div>
-
-                <div class="!mt-12">
-                    <input type="submit" value="Iniciar Sesión" class="form-button">
-                    </input>
-                </div>
-
-                <p class="text-gray-800 text-sm mt-6 text-center">No tienes cuenta? <a href="{{route('register.index')}}" class="text-secondary font-semibold hover:underline ml-1">Registrate aquí</a></p>
-
+            <div class="col-span-2 bg-login hidden md:block">
+                {{-- Background image --}}
             </div>
 
-        </form>
-    </div>
-</div>
+            <main class="col-span-5 md:col-span-3 bg-background h-full p-10">
+
+                <header class="mb-4 w-full text-center flex justify-between items-center p-6">
+                    <a href="{{route('welcome')}}" class="text-4xl font-bold text-gray-800">EduCA</a>
+                    <div class="mt-4">
+                        <a href="{{route('register.index')}}" class="underline text-gray-800">Registrarse</a>
+                    </div>
+                </header>
+
+                <form action="{{route('login.store')}}" method="POST" novalidate class="w-full max-w-m p-6">
+                    @csrf
+                    @method('POST')
+
+                    <h1 class="text-2xl font-extrabold text-gray-900 mb-8">Iniciar Sesión</h1>
+
+                    @if (session('mensaje'))
+                        <p class="message-error">{{session('mensaje')}}</p>
+                    @endif
+
+                    <div class="mb-6 w-full">
+                        <label for="email" class="block text-gray-800 text-lg font-medium mb-2">Correo Electrónico</label>
+                        <input type="email" name="email" id="email" placeholder="email@example.com" class="form-inputs !w-full" value="{{old('email')}}">
+                        @error('email')
+                            <p class="message-error mt-1">{{$message}}</p>
+                        @enderror
+                    </div>
+
+                    <div class="mb-6">
+                        <label for="password" class="block text-gray-800 text-lg font-medium mb-2">Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="********" class="form-inputs !w-full">
+                        @error('password')
+                            <p class="message-error mt-1">{{$message}}</p>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <input type="submit" value="Iniciar Sesión" class="button-primary !w-full">
+                    </div>
+                </form>
+
+            </main>
+
+        </div>
+
+    </section>
 @endsection
