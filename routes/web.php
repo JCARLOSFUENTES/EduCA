@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ProfileController;
+use App\Http\Controllers\CourseController;
 use Illuminate\Support\Facades\Route;
 
 // Ruta de la Landing Page
@@ -49,5 +50,12 @@ Route::controller(HomeController::class)->group(function(){
 Route::controller(ProfileController::class)->group(function(){
 
     Route::get('/{user:username}', 'index')->name('profile.index');
+
+});
+
+// Rutas Cursos
+Route::controller(CourseController::class)->group(function(){
+
+    Route::get('/curso/{slug}', 'index')->name('course.index');
 
 });
