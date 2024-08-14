@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-with-navbar')
 
 @section('title', 'EduCA - Bienvenidos')
 

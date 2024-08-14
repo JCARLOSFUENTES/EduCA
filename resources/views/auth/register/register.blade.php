@@ -60,6 +60,24 @@
                     @enderror
                 </div>
 
+                <!-- Selección de categorías -->
+                <div class="mb-4">
+                    <label for="categories" class="block text-gray-800 text-lg font-medium mb-2">Intereses</label>
+                    <div id="categories" class="flex flex-wrap">
+                        @foreach($categories as $category)
+                            <div class="w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="checkbox" name="categories[]" value="{{ $category->id }}" class="form-checkbox text-blue-600">
+                                    <span class="text-gray-800">{{ $category->name }}</span>
+                                </label>
+                            </div>
+                        @endforeach
+                    </div>
+                    @error('categories')
+                        <p class="message-error mt-2">{{$message}}</p>
+                    @enderror
+                </div>
+
                 <div>
                     <input type="submit" value="Registrarse" class="!w-full button-primary cursor-pointer">
                 </div>
