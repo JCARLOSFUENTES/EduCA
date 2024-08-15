@@ -2,9 +2,9 @@
 
 <nav class="w-full flex items-center justify-between p-4 fixed bg-background border-b-2 border-black z-20">
 
-    <div>
-        <a href="{{ route('welcome') }}" class="text-3xl font-bold text-gray-800">EduCA</a>
-    </div>
+    <a href="{{ route('welcome') }}" class="flex items-center space-x-2">
+        <img class="h-12 w-auto" src="{{ asset('img/Logo.png') }}" alt="Educa logo">
+    </a>
 
     <div class="hidden md:flex space-x-6">
         <a href="{{ route('register.index') }}" class="button-primary">Regístrate</a>
