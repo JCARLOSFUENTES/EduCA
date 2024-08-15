@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Models\Course;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\CourseController;
 
 class HomeController extends Controller
 {
@@ -15,13 +16,17 @@ class HomeController extends Controller
     }
 
     // Mostrar vista de home
-    public function index()
+    public function index(Request $request)
     {
-        // Obtener las categorias de interes del usuario autenticado
-        // $user = auth()->user();
-        // $categories = $user->categories()->pluck('id');
+        // Crear instancia de CourseController
+        $courseController = new CourseController;
 
-        return view('auth.home.home');
+        // Obtener cursos recomendados
+        $courses = $courseController->showCoursesByUserCategories($request);
+
+        return view('auth.home.home', compact('courses'));
     }
 
 }
+
+
