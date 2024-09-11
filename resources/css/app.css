@@ -36,7 +36,7 @@
 
 .message-error
 {
-    @apply h-8 flex items-center border-black border-2 p-2.5 bg-red-400 rounded-md;
+    @apply h-8 text-justify text-red-400;
 }
 
 /* Custom scrollbar styles */
