@@ -74,6 +74,9 @@
                 <form action="{{route('login.store')}}" class="grid gap-4" method="POST" novalidate>
                     @csrf
                     @method('POST')
+                    @if (session('message'))
+                        <p class="message-error">{{session('message')}}</p>
+                    @endif
                     <div class="relative">
                         <label
                             class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm font-medium text-[#182848]"

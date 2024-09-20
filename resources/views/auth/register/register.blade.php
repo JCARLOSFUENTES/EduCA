@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('title', 'EduCA - Registro')
 
 @section('content')

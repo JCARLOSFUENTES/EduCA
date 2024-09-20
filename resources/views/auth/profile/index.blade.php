@@ -1,0 +1,9 @@
+<div>
+    {{auth()->user()->username}}
+</div>
+<div>
+    {{auth()->user()->name}}
+</div>
+<div>
+    {{auth()->user()->email}}
+</div>

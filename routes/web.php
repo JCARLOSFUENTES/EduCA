@@ -1,20 +1,17 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisterController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\Auth\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ProfileController;
-use App\Http\Controllers\CourseController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
 
 // Ruta de la Landing Page
 Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
-
-// Ruta de Registro
-// Route::get('/registro', [RegisterController::class, 'index'])->name('register');
 
 // Rutas de Registro
 Route::controller(RegisterController::class)->group(function(){

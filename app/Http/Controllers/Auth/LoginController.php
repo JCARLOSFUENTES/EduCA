@@ -24,7 +24,7 @@ class LoginController extends Controller
 
         // Verificación si las credenciales son correctas
         if(!auth()->attempt($request->only('email', 'password'), $request->remember)) {
-            return back()->with('mensaje', 'Credenciales incorrectas');
+            return back()->with('message', 'Credenciales incorrectas');
         }
 
         // Dirigir a la vista Home en caso de estar autenticado
